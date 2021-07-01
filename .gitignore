@@ -152,4 +152,7 @@ dist
 .history
 .ionide
 
+# mocha/chai
+.nyc_output
+
 # End of https://www.toptal.com/developers/gitignore/api/linux,visualstudiocode,node
