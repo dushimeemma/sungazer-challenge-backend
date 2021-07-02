@@ -2,7 +2,7 @@
 
 # TRANSACTIONS APIs | SUNGAZER CHALLENGE
 
-## Setup and Installion
+## Setup and Installation
 
 - clone the repo `git clone https://github.com/dushimeemma/sungazer-challenge-backend.git`
 
@@ -46,5 +46,14 @@ Note: If you make changes that uses environmental variables make sure to add tho
 {
     "email":"sample@email.com",
     "password":"String@Number"
+}
+```
+
+### Transaction Model
+
+```
+{
+    "description":"weekend withdraw",
+    "amount": 82
 }
 ```
