@@ -6,8 +6,8 @@
   "author": "Emmanuel Dushime",
   "license": "MIT",
   "scripts": {
-    "start": "yarn run build && node dist/index.js",
-    "dev": "nodemon --exec babel-node src/index.js",
+    "start": "NODE_ENV=production yarn run migrate:dev && NODE_ENV=production yarn run server:prod",
+    "dev": "NODE_ENV=development yarn run migrate:dev && NODE_ENV=development nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
     "test": "NODE_ENV=test yarn run migrate:test && NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 10000 -r @babel/register tests/*  --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
