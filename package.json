@@ -9,8 +9,10 @@
     "start": "yarn run build && node dist/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 10000 -r @babel/register tests/*  --exit",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": "NODE_ENV=test yarn run migrate:test && NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 10000 -r @babel/register tests/*  --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "migrate:test":"node_modules/.bin/sequelize db:migrate:undo:all && node_modules/.bin/sequelize db:migrate",
+    "migrate:dev":"node_modules/.bin/sequelize db:migrate"
   },
   "dependencies": {
     "@babel/cli": "^7.14.5",
@@ -20,9 +22,17 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.7",
     "@babel/register": "^7.14.5",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "joi": "17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "path": "^0.12.7",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "5.21.5",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
     "chai": "^4.3.4",
