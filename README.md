@@ -29,6 +29,13 @@ Note: If you make changes that uses environmental variables make sure to add tho
 
 ## Endpoints
 
+- SIGNUP : `POST request /api/auth/signup`
+- LOGIN : `POST request /api/auth/login`
+- GET ALL TRANSACTIONS : `GET request /api/transactions`
+- GET USER'S TRANSACTIONS : `GET request /api/transactions/user/transactions`
+- DEPOSE : `POST request /api/transactions/depose`
+- WITHDRAW : `POST request /api/transactions/withdraw`
+
 ### Signup Model
 
 ```
