@@ -63,7 +63,7 @@ class AuthController {
     }
 
     if (!checkUser) {
-      return res.status(400).json({
+      return res.status(401).json({
         error: 'Invalid credentials',
       });
     }
@@ -71,7 +71,7 @@ class AuthController {
     const checkPassword = bcrypt.compareSync(password, checkUser.password);
 
     if (!checkPassword) {
-      return res.status(400).json({
+      return res.status(401).json({
         error: 'Invalid credentials',
       });
     }
